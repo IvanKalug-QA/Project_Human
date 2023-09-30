@@ -47,9 +47,25 @@ class Human():
                 f'поднял уважение на - {respec}, и заработал ${salary}, '
                 f'осталось энергии - {self.energy}')
 
-    def seller(self):
-        pass
+    def seller(self) -> str:
+        if self.energy - 40 < 0:
+            return 'Мало энергии!'
+        self.respect += 10
+        self.money += 30
+        self.energy -= 40
+        salary: int = 40
+        resp: int = 5
+        return(f'Ты поработал продавцом и '
+               f'не плохо подзаработал - {salary} и '
+               f'поднял уважение на - {resp}, '
+               f'осталось энергии - {self.energy}')
 
 
 class Easy(Human):
+    pass
+
+class Normal(Human):
+    pass
+
+class Hard(Human):
     pass
